@@ -33,7 +33,8 @@
         .pain-points h2 { font-size: 40px; text-align: center; margin-bottom: 60px; }
         .pain-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
         .pain-item { text-align: center; padding: 40px; background: rgba(255,255,255,0.1); border-radius: 16px; }
-        .pain-item .icon { font-size: 48px; margin-bottom: 20px; }
+        .pain-icon { width: 64px; height: 64px; background: rgba(249,115,22,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; }
+        .pain-icon svg { width: 32px; height: 32px; stroke: #f97316; fill: none; stroke-width: 2; }
         .pain-item h3 { font-size: 24px; margin-bottom: 12px; color: #f97316; }
         .pain-item p { color: #94a3b8; }
         .features { padding: 100px 0; }
@@ -42,7 +43,8 @@
         .feature-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; }
         .feature-card { padding: 40px; border: 2px solid #e2e8f0; border-radius: 16px; transition: all 0.3s; }
         .feature-card:hover { border-color: #f97316; transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-        .feature-icon { width: 64px; height: 64px; background: linear-gradient(135deg, #f97316, #fb923c); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; font-size: 28px; }
+        .feature-icon { width: 64px; height: 64px; background: linear-gradient(135deg, #f97316, #fb923c); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; }
+        .feature-icon svg { width: 32px; height: 32px; stroke: white; fill: none; stroke-width: 2; }
         .feature-card h3 { font-size: 24px; margin-bottom: 12px; color: #1e3a5f; }
         .feature-card p { color: #64748b; font-size: 16px; }
         .pricing { padding: 100px 0; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); }
@@ -108,9 +110,27 @@
         <div class="container">
             <h2>Enterprise intent tools weren't built for you</h2>
             <div class="pain-grid">
-                <div class="pain-item"><div class="icon">ð¸</div><h3>$50K+ Annual Contracts</h3><p>Enterprise pricing that doesn't make sense for growing teams.</p></div>
-                <div class="pain-item"><div class="icon">â³</div><h3>Months of Implementation</h3><p>Complex setups before you see any value.</p></div>
-                <div class="pain-item"><div class="icon">ð¤¯</div><h3>Complexity You Don't Need</h3><p>Feature bloat designed for Fortune 500 companies.</p></div>
+                <div class="pain-item">
+                    <div class="pain-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    </div>
+                    <h3>$50K+ Annual Contracts</h3>
+                    <p>Enterprise pricing that doesn't make sense for growing teams.</p>
+                </div>
+                <div class="pain-item">
+                    <div class="pain-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <h3>Months of Implementation</h3>
+                    <p>Complex setups before you see any value.</p>
+                </div>
+                <div class="pain-item">
+                    <div class="pain-icon">
+                        <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                    </div>
+                    <h3>Complexity You Don't Need</h3>
+                    <p>Feature bloat designed for Fortune 500 companies.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -120,10 +140,34 @@
             <h2>Signals that actually matter</h2>
             <p class="features-subtitle">Track the buying indicators that predict pipeline</p>
             <div class="feature-grid">
-                <div class="feature-card"><div class="feature-icon">ð</div><h3>Job Posting Signals</h3><p>Know when companies are hiring for roles that need your solution.</p></div>
-                <div class="feature-card"><div class="feature-icon">ð§</div><h3>Tech Stack Changes</h3><p>Detect when prospects adopt or switch complementary tools.</p></div>
-                <div class="feature-card"><div class="feature-icon">ð°</div><h3>Funding Alerts</h3><p>Fresh capital means budget for new solutions.</p></div>
-                <div class="feature-card"><div class="feature-icon">ð</div><h3>Hiring Velocity</h3><p>Track growth patterns that indicate buying readiness.</p></div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    </div>
+                    <h3>Job Posting Signals</h3>
+                    <p>Know when companies are hiring for roles that need your solution.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </div>
+                    <h3>Tech Stack Changes</h3>
+                    <p>Detect when prospects adopt or switch complementary tools.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    </div>
+                    <h3>Funding Alerts</h3>
+                    <p>Fresh capital means budget for new solutions.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                    </div>
+                    <h3>Hiring Velocity</h3>
+                    <p>Track growth patterns that indicate buying readiness.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -133,9 +177,24 @@
             <h2>Plans starting at $199/month</h2>
             <p class="pricing-subtitle">Not $60K/year. Not even close.</p>
             <div class="pricing-grid">
-                <div class="price-card"><h3>Starter</h3><div class="price">$199<span>/mo</span></div><p class="price-desc">Perfect for small teams</p><a href="#early-access" class="price-cta">Join Waitlist</a></div>
-                <div class="price-card featured"><h3>Growth</h3><div class="price">$499<span>/mo</span></div><p class="price-desc">For scaling teams</p><a href="#early-access" class="price-cta">Join Waitlist</a></div>
-                <div class="price-card"><h3>Scale</h3><div class="price">$999<span>/mo</span></div><p class="price-desc">Full platform access</p><a href="#early-access" class="price-cta">Join Waitlist</a></div>
+                <div class="price-card">
+                    <h3>Starter</h3>
+                    <div class="price">$199<span>/mo</span></div>
+                    <p class="price-desc">Perfect for small teams</p>
+                    <a href="#early-access" class="price-cta">Join Waitlist</a>
+                </div>
+                <div class="price-card featured">
+                    <h3>Growth</h3>
+                    <div class="price">$499<span>/mo</span></div>
+                    <p class="price-desc">For scaling teams</p>
+                    <a href="#early-access" class="price-cta">Join Waitlist</a>
+                </div>
+                <div class="price-card">
+                    <h3>Scale</h3>
+                    <div class="price">$999<span>/mo</span></div>
+                    <p class="price-desc">Full platform access</p>
+                    <a href="#early-access" class="price-cta">Join Waitlist</a>
+                </div>
             </div>
         </div>
     </section>
@@ -151,7 +210,7 @@
             </div>
             <div class="testimonial">
                 <p>"Finally, intent data that makes sense for our budget."</p>
-                <cite>â VP of Sales, Series B SaaS Company</cite>
+                <cite>- VP of Sales, Series B SaaS Company</cite>
             </div>
         </div>
     </section>
@@ -181,12 +240,12 @@
     </footer>
 
     <script>
-        document.querySelectorAll('form').forEach(form => {
+        document.querySelectorAll('form').forEach(function(form) {
             form.addEventListener('submit', function(e) {
-                const button = this.querySelector('button');
+                var button = this.querySelector('button');
                 button.textContent = 'Joining...';
                 button.disabled = true;
-                setTimeout(() => { button.textContent = "You're on the list!"; }, 1000);
+                setTimeout(function() { button.textContent = "You're on the list!"; }, 1000);
             });
         });
     </script>
