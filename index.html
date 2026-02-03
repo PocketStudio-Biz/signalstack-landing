@@ -6,479 +6,87 @@
     <title>SignalStack - Intent Data That Doesn't Cost $60K/Year</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.6;
-            color: #1a1a2e;
-            background: #ffffff;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-        
-        /* Navigation */
-        nav {
-            padding: 20px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            border-bottom: 1px solid #eee;
-        }
-        
-        nav .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 24px;
-            font-weight: 800;
-            color: #1e3a5f;
-        }
-        
-        .logo span {
-            color: #f97316;
-        }
-        
-        .nav-cta {
-            background: #1e3a5f;
-            color: white;
-            padding: 12px 24px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-        
-        .nav-cta:hover {
-            background: #2d4a6f;
-            transform: translateY(-2px);
-        }
-        
-        /* Hero Section */
-        .hero {
-            padding: 160px 0 100px;
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-        }
-        
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .hero h1 {
-            font-size: 56px;
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 24px;
-            color: #1e3a5f;
-        }
-        
-        .hero h1 span {
-            color: #f97316;
-        }
-        
-        .hero p {
-            font-size: 22px;
-            color: #475569;
-            margin-bottom: 40px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .email-form {
-            display: flex;
-            gap: 12px;
-            max-width: 500px;
-            margin: 0 auto 24px;
-        }
-        
-        .email-form input {
-            flex: 1;
-            padding: 16px 20px;
-            border: 2px solid #e2e8f0;
-            border-radius: 8px;
-            font-size: 16px;
-            transition: border-color 0.3s;
-        }
-        
-        .email-form input:focus {
-            outline: none;
-            border-color: #f97316;
-        }
-        
-        .email-form button {
-            background: #f97316;
-            color: white;
-            padding: 16px 32px;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            white-space: nowrap;
-        }
-        
-        .email-form button:hover {
-            background: #ea580c;
-            transform: translateY(-2px);
-        }
-        
-        .hero-note {
-            font-size: 14px;
-            color: #64748b;
-        }
-        
-        /* Pain Points */
-        .pain-points {
-            padding: 100px 0;
-            background: #1e3a5f;
-            color: white;
-        }
-        
-        .pain-points h2 {
-            font-size: 40px;
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        
-        .pain-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-        }
-        
-        .pain-item {
-            text-align: center;
-            padding: 40px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 16px;
-        }
-        
-        .pain-item .icon {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-        
-        .pain-item h3 {
-            font-size: 24px;
-            margin-bottom: 12px;
-            color: #f97316;
-        }
-        
-        .pain-item p {
-            color: #94a3b8;
-        }
-        
-        /* Features */
-        .features {
-            padding: 100px 0;
-        }
-        
-        .features h2 {
-            font-size: 40px;
-            text-align: center;
-            margin-bottom: 16px;
-            color: #1e3a5f;
-        }
-        
-        .features-subtitle {
-            text-align: center;
-            font-size: 20px;
-            color: #64748b;
-            margin-bottom: 60px;
-        }
-        
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-        }
-        
-        .feature-card {
-            padding: 40px;
-            border: 2px solid #e2e8f0;
-            border-radius: 16px;
-            transition: all 0.3s;
-        }
-        
-        .feature-card:hover {
-            border-color: #f97316;
-            transform: translateY(-4px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-        
-        .feature-icon {
-            width: 64px;
-            height: 64px;
-            background: linear-gradient(135deg, #f97316, #fb923c);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 24px;
-            font-size: 28px;
-        }
-        
-        .feature-card h3 {
-            font-size: 24px;
-            margin-bottom: 12px;
-            color: #1e3a5f;
-        }
-        
-        .feature-card p {
-            color: #64748b;
-            font-size: 16px;
-        }
-        
-        /* Pricing */
-        .pricing {
-            padding: 100px 0;
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-        }
-        
-        .pricing h2 {
-            font-size: 40px;
-            text-align: center;
-            margin-bottom: 16px;
-            color: #1e3a5f;
-        }
-        
-        .pricing-subtitle {
-            text-align: center;
-            font-size: 24px;
-            color: #f97316;
-            font-weight: 700;
-            margin-bottom: 60px;
-        }
-        
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .price-card {
-            background: white;
-            padding: 40px;
-            border-radius: 16px;
-            text-align: center;
-            border: 2px solid #e2e8f0;
-            transition: all 0.3s;
-        }
-        
-        .price-card.featured {
-            border-color: #f97316;
-            transform: scale(1.05);
-            box-shadow: 0 20px 40px rgba(249,115,22,0.2);
-        }
-        
-        .price-card h3 {
-            font-size: 24px;
-            margin-bottom: 16px;
-            color: #1e3a5f;
-        }
-        
-        .price {
-            font-size: 48px;
-            font-weight: 800;
-            color: #1e3a5f;
-            margin-bottom: 8px;
-        }
-        
-        .price span {
-            font-size: 18px;
-            font-weight: 400;
-            color: #64748b;
-        }
-        
-        .price-desc {
-            color: #64748b;
-            margin-bottom: 24px;
-        }
-        
-        .price-cta {
-            display: block;
-            padding: 14px 28px;
-            background: #1e3a5f;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-        
-        .price-card.featured .price-cta {
-            background: #f97316;
-        }
-        
-        .price-cta:hover {
-            transform: translateY(-2px);
-        }
-        
-        /* Social Proof */
-        .social-proof {
-            padding: 100px 0;
-        }
-        
-        .social-proof h2 {
-            font-size: 32px;
-            text-align: center;
-            margin-bottom: 60px;
-            color: #64748b;
-        }
-        
-        .logo-grid {
-            display: flex;
-            justify-content: center;
-            gap: 60px;
-            margin-bottom: 60px;
-            flex-wrap: wrap;
-        }
-        
-        .logo-placeholder {
-            width: 140px;
-            height: 50px;
-            background: #e2e8f0;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #94a3b8;
-            font-size: 14px;
-        }
-        
-        .testimonial {
-            max-width: 700px;
-            margin: 0 auto;
-            text-align: center;
-            padding: 40px;
-            background: #f8fafc;
-            border-radius: 16px;
-        }
-        
-        .testimonial p {
-            font-size: 24px;
-            font-style: italic;
-            color: #475569;
-            margin-bottom: 24px;
-        }
-        
-        .testimonial cite {
-            color: #64748b;
-            font-style: normal;
-        }
-        
-        /* CTA Section */
-        .cta-section {
-            padding: 100px 0;
-            background: #1e3a5f;
-            text-align: center;
-        }
-        
-        .cta-section h2 {
-            font-size: 40px;
-            color: white;
-            margin-bottom: 24px;
-        }
-        
-        .cta-section p {
-            font-size: 20px;
-            color: #94a3b8;
-            margin-bottom: 40px;
-        }
-        
-        .cta-section .email-form {
-            max-width: 500px;
-        }
-        
-        /* Footer */
-        footer {
-            padding: 60px 0;
-            background: #0f172a;
-            color: #94a3b8;
-        }
-        
-        footer .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        footer .logo {
-            color: white;
-        }
-        
-        .footer-links {
-            display: flex;
-            gap: 30px;
-        }
-        
-        .footer-links a {
-            color: #94a3b8;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer-links a:hover {
-            color: white;
-        }
-        
-        .footer-tagline {
-            font-size: 14px;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 36px;
-            }
-            
-            .email-form {
-                flex-direction: column;
-            }
-            
-            .pain-grid,
-            .feature-grid,
-            .pricing-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .price-card.featured {
-                transform: none;
-            }
-            
-            footer .container {
-                flex-direction: column;
-                gap: 24px;
-                text-align: center;
-            }
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; line-height: 1.6; color: #1a1a2e; background: #fff; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        nav { padding: 20px 0; position: fixed; width: 100%; top: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); z-index: 1000; border-bottom: 1px solid #eee; }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 24px; font-weight: 800; color: #1e3a5f; }
+        .logo span { color: #f97316; }
+        .nav-links { display: flex; gap: 24px; align-items: center; }
+        .nav-link { color: #475569; text-decoration: none; font-weight: 500; transition: color 0.3s; }
+        .nav-link:hover { color: #1e3a5f; }
+        .nav-cta { background: #1e3a5f; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s; }
+        .nav-cta:hover { background: #2d4a6f; transform: translateY(-2px); }
+        .hero { padding: 160px 0 100px; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); }
+        .hero-content { max-width: 800px; margin: 0 auto; text-align: center; }
+        .hero h1 { font-size: 56px; font-weight: 800; line-height: 1.1; margin-bottom: 24px; color: #1e3a5f; }
+        .hero h1 span { color: #f97316; }
+        .hero p { font-size: 22px; color: #475569; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .email-form { display: flex; gap: 12px; max-width: 500px; margin: 0 auto 24px; }
+        .email-form input { flex: 1; padding: 16px 20px; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 16px; transition: border-color 0.3s; }
+        .email-form input:focus { outline: none; border-color: #f97316; }
+        .email-form button { background: #f97316; color: white; padding: 16px 32px; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; transition: all 0.3s; white-space: nowrap; }
+        .email-form button:hover { background: #ea580c; transform: translateY(-2px); }
+        .hero-note { font-size: 14px; color: #64748b; }
+        .pain-points { padding: 100px 0; background: #1e3a5f; color: white; }
+        .pain-points h2 { font-size: 40px; text-align: center; margin-bottom: 60px; }
+        .pain-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+        .pain-item { text-align: center; padding: 40px; background: rgba(255,255,255,0.1); border-radius: 16px; }
+        .pain-item .icon { font-size: 48px; margin-bottom: 20px; }
+        .pain-item h3 { font-size: 24px; margin-bottom: 12px; color: #f97316; }
+        .pain-item p { color: #94a3b8; }
+        .features { padding: 100px 0; }
+        .features h2 { font-size: 40px; text-align: center; margin-bottom: 16px; color: #1e3a5f; }
+        .features-subtitle { text-align: center; font-size: 20px; color: #64748b; margin-bottom: 60px; }
+        .feature-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; }
+        .feature-card { padding: 40px; border: 2px solid #e2e8f0; border-radius: 16px; transition: all 0.3s; }
+        .feature-card:hover { border-color: #f97316; transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .feature-icon { width: 64px; height: 64px; background: linear-gradient(135deg, #f97316, #fb923c); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; font-size: 28px; }
+        .feature-card h3 { font-size: 24px; margin-bottom: 12px; color: #1e3a5f; }
+        .feature-card p { color: #64748b; font-size: 16px; }
+        .pricing { padding: 100px 0; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); }
+        .pricing h2 { font-size: 40px; text-align: center; margin-bottom: 16px; color: #1e3a5f; }
+        .pricing-subtitle { text-align: center; font-size: 24px; color: #f97316; font-weight: 700; margin-bottom: 60px; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1000px; margin: 0 auto; }
+        .price-card { background: white; padding: 40px; border-radius: 16px; text-align: center; border: 2px solid #e2e8f0; transition: all 0.3s; }
+        .price-card.featured { border-color: #f97316; transform: scale(1.05); box-shadow: 0 20px 40px rgba(249,115,22,0.2); }
+        .price-card h3 { font-size: 24px; margin-bottom: 16px; color: #1e3a5f; }
+        .price { font-size: 48px; font-weight: 800; color: #1e3a5f; margin-bottom: 8px; }
+        .price span { font-size: 18px; font-weight: 400; color: #64748b; }
+        .price-desc { color: #64748b; margin-bottom: 24px; }
+        .price-cta { display: block; padding: 14px 28px; background: #1e3a5f; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s; }
+        .price-card.featured .price-cta { background: #f97316; }
+        .price-cta:hover { transform: translateY(-2px); }
+        .social-proof { padding: 100px 0; }
+        .social-proof h2 { font-size: 32px; text-align: center; margin-bottom: 60px; color: #64748b; }
+        .logo-grid { display: flex; justify-content: center; gap: 60px; margin-bottom: 60px; flex-wrap: wrap; }
+        .logo-placeholder { width: 140px; height: 50px; background: #e2e8f0; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #94a3b8; font-size: 14px; }
+        .testimonial { max-width: 700px; margin: 0 auto; text-align: center; padding: 40px; background: #f8fafc; border-radius: 16px; }
+        .testimonial p { font-size: 24px; font-style: italic; color: #475569; margin-bottom: 24px; }
+        .testimonial cite { color: #64748b; font-style: normal; }
+        .cta-section { padding: 100px 0; background: #1e3a5f; text-align: center; }
+        .cta-section h2 { font-size: 40px; color: white; margin-bottom: 24px; }
+        .cta-section p { font-size: 20px; color: #94a3b8; margin-bottom: 40px; }
+        .cta-section .email-form { max-width: 500px; }
+        footer { padding: 60px 0; background: #0f172a; color: #94a3b8; }
+        footer .container { display: flex; justify-content: space-between; align-items: center; }
+        footer .logo { color: white; }
+        .footer-links { display: flex; gap: 30px; }
+        .footer-links a { color: #94a3b8; text-decoration: none; transition: color 0.3s; }
+        .footer-links a:hover { color: white; }
+        .footer-tagline { font-size: 14px; }
+        @media (max-width: 768px) { .hero h1 { font-size: 36px; } .email-form { flex-direction: column; } .pain-grid, .feature-grid, .pricing-grid { grid-template-columns: 1fr; } .price-card.featured { transform: none; } footer .container { flex-direction: column; gap: 24px; text-align: center; } .nav-links { gap: 12px; } }
     </style>
 </head>
 <body>
     <nav>
         <div class="container">
             <div class="logo">Signal<span>Stack</span></div>
-            <a href="#early-access" class="nav-cta">Get Early Access</a>
+            <div class="nav-links">
+                <a href="https://github.com/PocketStudio-Biz/signalstack-app" class="nav-link" target="_blank">GitHub</a>
+                <a href="#early-access" class="nav-cta">Get Early Access</a>
+            </div>
         </div>
     </nav>
 
@@ -500,21 +108,9 @@
         <div class="container">
             <h2>Enterprise intent tools weren't built for you</h2>
             <div class="pain-grid">
-                <div class="pain-item">
-                    <div class="icon">ð¸</div>
-                    <h3>$50K+ Annual Contracts</h3>
-                    <p>Enterprise pricing that doesn't make sense for growing teams. Most budgets can't justify the spend.</p>
-                </div>
-                <div class="pain-item">
-                    <div class="icon">â³</div>
-                    <h3>Months of Implementation</h3>
-                    <p>Complex setups, endless integrations, and professional services before you see any value.</p>
-                </div>
-                <div class="pain-item">
-                    <div class="icon">ð¤¯</div>
-                    <h3>Complexity You Don't Need</h3>
-                    <p>Feature bloat designed for Fortune 500 companies. You just need signals that convert.</p>
-                </div>
+                <div class="pain-item"><div class="icon">ð¸</div><h3>$50K+ Annual Contracts</h3><p>Enterprise pricing that doesn't make sense for growing teams.</p></div>
+                <div class="pain-item"><div class="icon">â³</div><h3>Months of Implementation</h3><p>Complex setups before you see any value.</p></div>
+                <div class="pain-item"><div class="icon">ð¤¯</div><h3>Complexity You Don't Need</h3><p>Feature bloat designed for Fortune 500 companies.</p></div>
             </div>
         </div>
     </section>
@@ -522,28 +118,12 @@
     <section class="features">
         <div class="container">
             <h2>Signals that actually matter</h2>
-            <p class="features-subtitle">Track the buying indicators that predict pipeline, not vanity metrics</p>
+            <p class="features-subtitle">Track the buying indicators that predict pipeline</p>
             <div class="feature-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">ð</div>
-                    <h3>Job Posting Signals</h3>
-                    <p>Know when companies are hiring for roles that need your solution. Fresh job posts mean active budgets and real buying intent.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">ð§</div>
-                    <h3>Tech Stack Changes</h3>
-                    <p>Detect when prospects adopt or switch complementary tools. Technology changes signal evaluation cycles and budget allocation.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">ð°</div>
-                    <h3>Funding Alerts</h3>
-                    <p>Fresh capital means budget for new solutions. Get notified when your target accounts raise rounds or secure new financing.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">ð</div>
-                    <h3>Hiring Velocity</h3>
-                    <p>Track growth patterns that indicate buying readiness. Rapidly scaling teams have problems that need solvingânow.</p>
-                </div>
+                <div class="feature-card"><div class="feature-icon">ð</div><h3>Job Posting Signals</h3><p>Know when companies are hiring for roles that need your solution.</p></div>
+                <div class="feature-card"><div class="feature-icon">ð§</div><h3>Tech Stack Changes</h3><p>Detect when prospects adopt or switch complementary tools.</p></div>
+                <div class="feature-card"><div class="feature-icon">ð°</div><h3>Funding Alerts</h3><p>Fresh capital means budget for new solutions.</p></div>
+                <div class="feature-card"><div class="feature-icon">ð</div><h3>Hiring Velocity</h3><p>Track growth patterns that indicate buying readiness.</p></div>
             </div>
         </div>
     </section>
@@ -553,24 +133,9 @@
             <h2>Plans starting at $199/month</h2>
             <p class="pricing-subtitle">Not $60K/year. Not even close.</p>
             <div class="pricing-grid">
-                <div class="price-card">
-                    <h3>Starter</h3>
-                    <div class="price">$199<span>/mo</span></div>
-                    <p class="price-desc">Perfect for small teams getting started with intent data</p>
-                    <a href="#early-access" class="price-cta">Join Waitlist</a>
-                </div>
-                <div class="price-card featured">
-                    <h3>Growth</h3>
-                    <div class="price">$499<span>/mo</span></div>
-                    <p class="price-desc">For scaling teams who need more signals and integrations</p>
-                    <a href="#early-access" class="price-cta">Join Waitlist</a>
-                </div>
-                <div class="price-card">
-                    <h3>Scale</h3>
-                    <div class="price">$999<span>/mo</span></div>
-                    <p class="price-desc">Full platform access with priority support and custom signals</p>
-                    <a href="#early-access" class="price-cta">Join Waitlist</a>
-                </div>
+                <div class="price-card"><h3>Starter</h3><div class="price">$199<span>/mo</span></div><p class="price-desc">Perfect for small teams</p><a href="#early-access" class="price-cta">Join Waitlist</a></div>
+                <div class="price-card featured"><h3>Growth</h3><div class="price">$499<span>/mo</span></div><p class="price-desc">For scaling teams</p><a href="#early-access" class="price-cta">Join Waitlist</a></div>
+                <div class="price-card"><h3>Scale</h3><div class="price">$999<span>/mo</span></div><p class="price-desc">Full platform access</p><a href="#early-access" class="price-cta">Join Waitlist</a></div>
             </div>
         </div>
     </section>
@@ -585,7 +150,7 @@
                 <div class="logo-placeholder">Company Logo</div>
             </div>
             <div class="testimonial">
-                <p>"Finally, intent data that makes sense for our budget. We were spending $50K+ on tools that felt like glorified remarketing. This is different."</p>
+                <p>"Finally, intent data that makes sense for our budget."</p>
                 <cite>â VP of Sales, Series B SaaS Company</cite>
             </div>
         </div>
@@ -593,7 +158,7 @@
 
     <section class="cta-section" id="early-access">
         <div class="container">
-            <h2>Ready to get buying signals that don't break the bank?</h2>
+            <h2>Ready for buying signals that don't break the bank?</h2>
             <p>Join the waitlist and be first to access when we launch.</p>
             <form class="email-form" action="https://formspree.io/f/xzzeddpp" method="POST">
                 <input type="email" name="email" placeholder="Enter your work email" required>
@@ -606,27 +171,22 @@
         <div class="container">
             <div class="logo">Signal<span>Stack</span></div>
             <div class="footer-links">
+                <a href="https://docs.google.com/document/d/1btcJgo_UU_GLCQ5M54CLGu66QImqRZ5_9U6t2FuKti4/view" target="_blank">Docs</a>
+                <a href="https://github.com/PocketStudio-Biz/signalstack-app" target="_blank">GitHub</a>
                 <a href="#">Privacy</a>
                 <a href="#">Terms</a>
-                <a href="#">Contact</a>
             </div>
             <p class="footer-tagline">Built for teams who want signal, not noise.</p>
         </div>
     </footer>
 
     <script>
-        // Form submission feedback
         document.querySelectorAll('form').forEach(form => {
             form.addEventListener('submit', function(e) {
                 const button = this.querySelector('button');
-                const originalText = button.textContent;
                 button.textContent = 'Joining...';
                 button.disabled = true;
-                
-                // Re-enable after submission (Formspree handles the rest)
-                setTimeout(() => {
-                    button.textContent = 'You\'re on the list!';
-                }, 1000);
+                setTimeout(() => { button.textContent = "You're on the list!"; }, 1000);
             });
         });
     </script>
